@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.swiper', {
         direction: "horizontal",
         loop: false,
-        speed: 1500,
+        speed: 1900,
         slidesPerView: 4,
         spaceBetween: 60,
         mousewheel: true,
@@ -60,3 +60,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="java.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
     <title>castelo forrte</title>
 </head>
 
@@ -446,15 +447,58 @@
 
                 <div class="swiper-scrollbar"></div>
 
-            </section>
+                
 
+            </section>
+            <audio id="background-music" loop>
+                <source
+                  src="./music/casteloforte.mp3"
+                  type="audio/mpeg" />
+            </audio>
+              <button id="play-pause-button">
+                <ion-icon 
+                    class="audio-icon" 
+                    id="play-music" 
+                    name="play">
+                </ion-icon>
+                <ion-icon
+                  class="audio-icon hidden"
+                  id="pause-music"
+                  name="pause">
+                </ion-icon>
+              </button>
+          
+              <div id="particles-js" class="particles"></div>
         </section>
 
     </article>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
+    <script>
+        const audio = document.getElementById('background-music');
+        const playPauseButton = document.getElementById('play-pause-button');
+        const playIcon = document.getElementById('play-music');
+        const pauseIcon = document.getElementById('pause-music');
 
+        // Adiciona um evento de clique ao botão de reprodução
+        playPauseButton.addEventListener('click', () => {
+        // Verifica se o áudio está pausado
+        if (audio.paused) {
+            // Reproduz o áudio
+            audio.play();
+            // Altera os ícones de reprodução/pausa
+            playIcon.classList.add('hidden');
+            pauseIcon.classList.remove('hidden');
+        } else {
+            // Pausa o áudio
+            audio.pause();
+            // Altera os ícones de reprodução/pausa
+            playIcon.classList.remove('hidden');
+            pauseIcon.classList.add('hidden');
+  }
+});
+    </script>
     
 
 </body>
